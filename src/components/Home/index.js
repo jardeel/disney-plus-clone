@@ -1,9 +1,11 @@
+import { Container } from './styles';
+import ImgSlider from '../ImgSlider';
 
 function Home() {
   return (
-    <div>
-      Home
-    </div>
+    <Container>
+      <ImgSlider />
+    </Container>
   )
 }
 
