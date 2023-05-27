@@ -1,34 +1,30 @@
 import { Nav, Logo, NavMenu, UserImg } from './styles';
 
-function Header() {
+const menuItems = [
+  { icon: '/images/home-icon.svg', text: 'Home' },
+  { icon: '/images/search-icon.svg', text: 'Search' },
+  { icon: '/images/watchlist-icon.svg', text: 'Watchlist' },
+  { icon: '/images/original-icon.svg', text: 'Originals' },
+  { icon: '/images/movie-icon.svg', text: 'Movies' },
+  { icon: '/images/series-icon.svg', text: 'Series' },
+];
+
+function Header(){
+  const renderMenuItems = () => {
+    return menuItems.map((item) => (
+      <a key={item.text}>
+        <img src={item.icon} alt={item.text} />
+        <span>{item.text}</span>
+      </a>
+    ));
+  };
+
+
   return (
     <Nav>
-      <Logo src="/images/logo.svg"/>
+      <Logo src='/images/logo.svg' alt='Logo' />
       <NavMenu>
-        <a>
-          <img src="/images/home-icon.svg"/>
-          <span>Home</span>
-        </a>
-        <a>
-          <img src="/images/search-icon.svg" />
-          <span>Search</span>
-        </a>
-        <a>
-          <img src="/images/watchlist-icon.svg" />
-          <span>Watchlist</span>
-        </a>
-        <a>
-          <img src="/images/original-icon.svg" />
-          <span>Originals</span>
-        </a>
-        <a>
-          <img src="/images/movie-icon.svg" />
-          <span>Movies</span>
-        </a>
-        <a>
-          <img src="/images/series-icon.svg" />
-          <span>Series</span>
-        </a>
+        {renderMenuItems()}
       </NavMenu>
       <UserImg src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80"/>
     </Nav>
