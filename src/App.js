@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import Detail from './components/Detail';
+import Login from './components/Login';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: '/detail',
     element: <Detail/>
+  },
+  {
+    path: "/login",
+    element: <Login/>
   }
 ])
 
